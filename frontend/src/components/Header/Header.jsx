@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='header-contents'>
-                <h2>Caring for Those Who Cared for Us</h2>
-                <p>Empowering seniors with personalized care and safety solutions. From health management to real-time alerts, our app ensures peace of mind for you and your loved ones.</p>
-                {/* <Link to='/LoginPopup'>Ands</Link> */}
+                <h2>Order your favourite food here</h2>
+                <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
+                <button>View Menu</button>
             </div>
         </div>
     )
