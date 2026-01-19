@@ -6,7 +6,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
     const url = "http://localhost:4000"
-    const [food_list, setFoodList] = useState([]);
+    // const [food_list, setFoodList] = useState(foods_list);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
     const currency = "₹";
@@ -47,10 +47,14 @@ const StoreContextProvider = (props) => {
         return totalAmount;
     }
 
-    const fetchFoodList = async () => {
-        const response = await axios.get(url + "/api/food/list");
-        setFoodList(response.data.data)
-    }
+
+    // const fetchFoodList = async () => {
+    //     const response = await axios.get(url + "/api/food/list");
+    //     setFoodList([...food_list,response.data.data])
+
+    //     console.log(response.data.data);
+    //     console.log(foods)
+    // }
 
     const loadCartData = async (token) => {
         const response = await axios.post(url + "/api/cart/get", {}, { headers: token });
@@ -59,7 +63,7 @@ const StoreContextProvider = (props) => {
 
     useEffect(() => {
         async function loadData() {
-            await fetchFoodList();
+            // await fetchFoodList();
             if (localStorage.getItem("token")) {
                 setToken(localStorage.getItem("token"))
                 await loadCartData({ token: localStorage.getItem("token") })

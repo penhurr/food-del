@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import './ExploreMenu.css'
 import { StoreContext } from '../../Context/StoreContext'
+import FoodDisplay from '../FoodDisplay/FoodDisplay';
 
 const ExploreMenu = ({category,setCategory}) => {
 
   const {menu_list} = useContext(StoreContext);
-  console.log(menu_list)
+  // console.log(category)
   
   return (
     <div className='explore-menu' id='explore-menu'>
@@ -22,6 +23,7 @@ const ExploreMenu = ({category,setCategory}) => {
         })}
       </div>
       <hr />
+      <FoodDisplay category={category}/>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const Add = () => {
         name: "",
         description: "",
         price: "",
-        category: "Salad"
+        category: ""
     });
 
     const onSubmitHandler = async (event) => {
@@ -33,9 +33,9 @@ const Add = () => {
         if (response.data.success) {
             toast.success(response.data.message)
             setData({
-                name: "",
-                description: "",
-                price: "",
+                name: data.name,
+                description: data.description,
+                price: data.price,
                 category: data.category
             })
             setImage(false);
